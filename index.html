@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="http://cdn.pubnub.com/pubnub-3.7.15.min.js"></script>
+
+<head id="header">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width,user-scalable=0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<title>The Refugee Guide</title>
+</head>
+
+
+<body>
+	<!-- Top bar -->
+	<div id="banner">
+		<header id="header">
+			<h1>THE REFUGEE GUIDE</h1>
+		</header>
+	</div>
+
+	<!-- Nav bar -->
+	<div id="navbar">
+		<header id="message">
+			<h2>Helping each other to safety !!</h2>
+		</header>
+	</div>
+
+	<!-- Live feed -->
+	<div id="feed">
+		<h3>LIVE FEED </h3>
+		<div></div>
+	</div>
+
+	<!-- Map -->
+	<div id="map"></div>
+
+	<!-- Icons -->
+	<section id="icons">
+		<article>
+			<button class="policeicon icon" data-position="left center" type="button" data-toggle="modal" data-whatever="police" data-target="#modal" />
+			<img src="images/icons/police.png" alt="" />
+			</button>
+		</article>
+		<article>
+			<button class="redcrossicon icon" data-position="left center" type="button" data-toggle="modal" data-whatever="redcross" data-target="#modal">
+				<img src="images/icons/redcross.png" alt="" />
+			</button>
+		</article>
+		<article>
+			<button class="suppliesicon icon" data-position="left center" type="button" data-toggle="modal" data-whatever="supplies" data-target="#modal">
+				<img src="images/icons/supplies.png" alt="" />
+			</button>
+		</article>
+		<article>
+			<button class="refugeicon icon" data-position="left center" type="button" data-toggle="modal" data-whatever="refuge" data-target="#modal">
+				<img src="images/icons/refuge.png" alt="" />
+			</button>
+		</article>
+		<article>
+			<button class="criminalicon icon" data-position="left center" type="button" data-toggle="modal" data-whatever="criminal" data-target="#modal">
+				<img src="images/icons/criminal.png" alt="" />
+			</button>
+		</article>
+		<article>
+			<button class="detentionicon icon" data-position="left center" type="button" data-toggle="modal" data-whatever="detention" data-target="#modal">
+				<img src="images/icons/detention.png" alt="" />
+			</button>
+		</article>
+	</section>
+
+	<!-- Modal dialog -->
+	<div class="modal fade" id="modal" role="dialog" aria-labelledby="modalLabel">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title" id="modalLabel">New hazard</h4>
+				</div>
+				<div class="modal-body">
+					<p>Please provide some desciption:</p>
+					<textarea id="desciption">Description goes here...</textarea>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-success" id="submit" data-dismiss="modal" onclick="report($('textarea#desciption').val(), hazardType)">Report</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Scripts -->
+	<script>
+		var hazardType = 'other';
+		$(window).on('shown.bs.modal', function(event) {
+			var button = $(event.relatedTarget) // Button that triggered the modal
+			hazardType = button.data('whatever') // Extract info from data-* attributes
+			var modal = $(this)
+				//modal.find('.modal-title').text('New ' + hazardType + ' hazard')
+		})
+	</script>
+
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAyL8IKisllHv9LvOYKUG5pHKDUU4zFu0&signed_in=true&callback=initMap"></script>
+	<script src="assets/js/map.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+/*
+	TheRefugeeGuideUI by Darrin Fong
+	2015
+	Exodus project
+*/
+
+/* Reset */
+
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+			margin: 0;
+			padding: 1px;
+			border: 0;
+			font-size: 100%;
+			font: inherit;
+			vertical-align: baseline;
+		}
+
+		article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+			display: block;
+		}
+
+		body {
+			line-height: 1;
+		}
+
+		ol, ul {
+			list-style: none;
+		}
+
+		blockquote, q {
+			quotes: none;
+		}
+
+		blockquote:before, blockquote:after, q:before, q:after {
+			content: '';
+			content: none;
+		}
+
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+
+		body {
+			-webkit-text-size-adjust: none;
+		}
+	
+
+	html, body {
+		min-width: 720px;
+		white-space:nowrap;
+	}
+	
+	
+	h1, h2 {
+		font-weight: 400;
+		line-height: 1.25;		
+		color: #555;
+	}
+	
+	h1 {
+		font-size: 2em;
+		margin-left: 30%;
+	}
+	
+	h2 {
+		margin-left: 33%;
+	}
+	
+	body, input, select, textarea {
+		font-family: "Roboto", Helvetica, sans-serif;
+		font-weight: 400;
+		line-height: 1.65;
+		font-size: 1em;
+		color: #aaa;
+	}
+	
+	#icons {
+		display: flex;
+		padding: 0 0.75em;
+	}
+		
+		#icons article{
+			position: relative;
+			margin-top: 5%;
+			margin-right: 5%;
+			background: #ffffff;
+			outline: 0;
+		}
+		
+			#icons article .icon img {
+				height: auto; 
+				width: auto; 
+				max-width: 5em; 
+				max-height: 5em;
+			}
+		
+	
+	#feed {
+		position: absolute;
+		top: 11%;
+		right: 1%;
+		height: 85%;
+		width: 25%;
+		border-style: solid;
+		border-width: 3px;
+	}
+	
+	#feed h3 {
+		margin-left: 0;
+		margin-top: initial;
+	}
+    
+    #feed div {
+    	white-space: normal;
+       	word-wrap: break-word;
+	    position:justify;
+	    height: auto;
+	    overflow-x: auto;
+	    color: #000;
+    }
+	
+	#map {
+		height: 30em;
+		width: 70%;
+	}
+	
+	#modal {
+		height: !important;
+		padding-top: 10%;
+	}
